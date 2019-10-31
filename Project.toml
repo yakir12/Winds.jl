@@ -1,0 +1,19 @@
+name = "Winds"
+uuid = "faf67d5c-8ac5-5797-ada0-5a886027fa37"
+authors = ["yakir12 <12.yakir@gmail.com>"]
+version = "0.1.1"
+
+[deps]
+Blink = "ad839575-38b3-5650-b840-f874b8c74a25"
+COBS = "51d40088-776c-571e-837e-515b83a6b6e6"
+Interact = "c601a237-2ae4-5e1e-952c-7a85b0c7eef1"
+LibSerialPort = "a05a14c7-6e3b-5ba9-90a2-45558833e1df"
+
+[compat]
+julia = "^1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
