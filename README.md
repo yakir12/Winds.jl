@@ -26,6 +26,7 @@ This is a package for controlling fans.
 ## How to run
 1. Copy: 
    ```julia
+   using Winds
    main()
    ```
    and paste it in the newly opened Julia-terminal (make sure you ), press Enter (this may take some time).
