@@ -4,7 +4,7 @@ export main
 
 using LibSerialPort, Blink, Interact, COBS
 
-function main(; min::Int = 0, max::Int = 255, baud::Int = 9600)
+function main(; min::Int = 0, max::Int = 255, levels = min:max, baud::Int = 9600)
     @assert min < max "minimum, $min, must be smaller than maximum, $max"
     @assert 0 ≤ min ≤ 255 "minimum must be between 0 and 255"
     @assert 0 ≤ max ≤ 255 "maximum must be between 0 and 255"
@@ -19,7 +19,7 @@ function main(; min::Int = 0, max::Int = 255, baud::Int = 9600)
     body!(w, hbox("Port", dd, ok))
     on(ok) do _
         serialport = open(dd[], baud)
-        int = rangepicker(min:max, value = [min])
+        int = rangepicker(levels, value = [minimum(levels)])
         on(int) do i
             encode(serialport, UInt8(i[]))
         end
